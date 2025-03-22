@@ -5,7 +5,11 @@
       "root_module": "../src/lib.rs",
       "edition": "2021",
       "deps": [],
-      "cfg": ["lc9", "lc66"]
+      "cfg": ["lc9", "lc66"],
+      "source": {
+        "include_dirs": [".."],
+        "exclude_dirs": []
+      }
     },
     {
       "root_module": "../src/main.rs",
@@ -16,7 +20,11 @@
           "name": "leetcode"
         }
       ],
-      "cfg": []
+      "cfg": [],
+      "source": {
+        "include_dirs": [],
+        "exclude_dirs": []
+      }
     }
   ]
 }
