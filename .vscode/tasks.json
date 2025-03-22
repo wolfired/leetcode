@@ -1,0 +1,42 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build debug lib",
+      "type": "shell",
+      "command": "rustc -g --out-dir ./target --edition 2021 --crate-type lib --crate-name leetcode --cfg lc9 --cfg lc66 ./src/lib.rs",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    {
+      "label": "build debug bin",
+      "type": "shell",
+      "command": "rustc -g -o ./target/leetcode --edition 2021 --crate-type bin --crate-name leetcode -L ./target --extern leetcode ./src/main.rs",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "dependsOn": "build debug lib"
+    },
+    {
+      "label": "run debug bin",
+      "type": "shell",
+      "command": "./target/leetcode",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "options": {
+        "env": {}
+      },
+      "dependsOn": "build debug bin"
+    }
+  ]
+}
