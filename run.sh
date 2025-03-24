@@ -9,14 +9,15 @@ source $root_path/prepare.sh
 dir_src=$root_path/src
 dir_out=$root_path/target
 
-function insert_glue_code() {
+function glue_code() {
     local mod_rs="$dir_src/problemset/mod.rs"
 
     rm -rf $mod_rs && touch $mod_rs
 
-    for p in $dir_src/problemset/*; do
+    for p in $dir_src/problemset/*.rs; do
         if [[ 'mod.rs' != `basename $p` ]]; then
             echo "pub mod lcps`basename $p | grep -oP '^\d+(?=\.)'` { pub struct Solution; include!(\"./`basename $p`\"); }" >> $mod_rs
+            echo "" >> $mod_rs
         fi
     done
 
@@ -32,5 +33,5 @@ function main() {
     && $dir_out/$root_name
 }
 
-insert_glue_code
+glue_code
 main
