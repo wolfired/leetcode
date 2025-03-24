@@ -5,9 +5,9 @@
       "root_module": "../src/lib.rs",
       "edition": "2021",
       "deps": [],
-      "cfg": ["lc9", "lc66"],
+      "cfg": [],
       "source": {
-        "include_dirs": [".."],
+        "include_dirs": ["../src", "../src/problemset"],
         "exclude_dirs": []
       }
     },

@@ -6,7 +6,7 @@
     {
       "label": "build debug lib",
       "type": "shell",
-      "command": "rustc -g --out-dir ./target --edition 2021 --crate-type lib --crate-name leetcode --cfg lc9 --cfg lc66 ./src/lib.rs",
+      "command": "rustc -g --out-dir ./target --edition 2021 --crate-type lib --crate-name leetcode ./src/lib.rs",
       "problemMatcher": [],
       "group": {
         "kind": "build",
